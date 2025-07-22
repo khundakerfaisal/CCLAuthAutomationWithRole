@@ -12,18 +12,18 @@ public class LoginPage {
     @FindBy(id = "password")
     WebElement txtInputPassword;
 
-    @FindBy(xpath = "//button[@type=\"submit\"]")
+    @FindBy(xpath = "//button[@type='submit']")
     WebElement submitButton;
 
 
-    public LoginPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void doLoginCCLApps(WebDriver driver) throws InterruptedException {
-        txtInputLogin.sendKeys("Admin");
+    public void doLoginCCLApps(String username, String password) throws InterruptedException {
+        txtInputLogin.sendKeys(username);
         Thread.sleep(500);
-        txtInputPassword.sendKeys("1234");
+        txtInputPassword.sendKeys(password);
         Thread.sleep(500);
         submitButton.click();
         Thread.sleep(500);

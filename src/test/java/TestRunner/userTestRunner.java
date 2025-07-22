@@ -1,17 +1,28 @@
 package TestRunner;
+
 import Config.Setup;
 import Pages.LoginPage;
-import net.bytebuddy.build.Plugin;
+import SettingPages.UserAuthAndRoleAllow;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.internal.thread.ThreadExecutionException;
 
-public class LoginTestRunner extends Setup {
+public class userTestRunner extends Setup {
     @Test(priority = 1,description = "Auth user login successfully")
     public void doLoginWithValidCreds() throws InterruptedException {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.doLoginCCLApps("Admin","1234");
+        Thread.sleep(2000);
+        String ExpectedText=driver.findElement(By.xpath("//a[text()= 'Discuss']")).getText();
+        String ActualText="Discuss";
+        Assert.assertEquals(ActualText,ExpectedText);
+        Thread.sleep(2000);
+
+    }
+    @Test(priority = 2,description = "User Authentication With Authorized role")
+    public void doChangeAuthorizedRole() throws InterruptedException {
+        UserAuthAndRoleAllow userAuthAndRoleAllow=new UserAuthAndRoleAllow(driver);
+        userAuthAndRoleAllow.authUserSetupRole(driver);
         Thread.sleep(2000);
         String ExpectedText=driver.findElement(By.xpath("//a[text()= 'Discuss']")).getText();
         String ActualText="Discuss";
