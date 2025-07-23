@@ -15,23 +15,29 @@ public class UserAuthAndRoleAllow {
     WebElement rootMenu;
     @FindBy(xpath = "//div/a[@data-menu-xmlid=\"base.menu_administration\"]")
     WebElement settingPage;
+
+    @FindBy(xpath = "//button[span[text()='Manage Users']]")
+    WebElement manageUser;
+    @FindBy(xpath = "//button/i[@title=\"Toggle Search Panel\"]")
+    WebElement toggleSearchBox;
+
+    @FindBy(xpath = "//span[text()='Inactive Users']")
+    WebElement inactiveUser;
+
+    @FindBy(xpath = "//input[@placeholder='Search...']")
+    WebElement searchBox;
+
     public UserAuthAndRoleAllow(WebDriver driver) {
         PageFactory.initElements(driver,this);
     }
     public void authUserSetupRole(WebDriver driver) throws InterruptedException {
 
-//        WebDriver driver=new ChromeDriver();
-//        driver.get("http://192.168.3.226:9090/web/login");
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
-//        driver.findElement(By.id("login")).sendKeys("Admin");
-//        driver.findElement(By.id("password")).sendKeys("1234");
-//        driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
-//        Thread.sleep(2000);
         rootMenu.click();
         Thread.sleep(1000);
         settingPage.click();
         Thread.sleep(1000);
+
+
 
 //        List<String> usernames = Arrays.asList(
 //                "init.user", "hod.user", "hoit.user", "md.user", "cfo.user",
@@ -44,16 +50,18 @@ public class UserAuthAndRoleAllow {
         );
         for (String username:usernames){
             try {
-                driver.findElement(By.xpath("//button[span[text()='Manage Users']]")).click();
+//                driver.findElement(By.xpath("//button[span[text()='Manage Users']]")).click();
+                manageUser.click();
                 Thread.sleep(2000);
-                WebElement toggleSearchBox = driver.findElement(By.xpath("//button/i[@title=\"Toggle Search Panel\"]"));
+
+//                WebElement toggleSearchBox = driver.findElement(By.xpath("//button/i[@title=\"Toggle Search Panel\"]"));
                 toggleSearchBox.click();
                 Thread.sleep(1500);
-                WebElement inactiveUser = driver.findElement(By.xpath("//span[text()='Inactive Users']"));
+//                WebElement inactiveUser = driver.findElement(By.xpath("//span[text()='Inactive Users']"));
                 inactiveUser.click();
                 Thread.sleep(1500);
                 // Filter/search the user
-                WebElement searchBox = driver.findElement(By.xpath("//input[@placeholder='Search...']"));
+//                WebElement searchBox = driver.findElement(By.xpath("//input[@placeholder='Search...']"));
                 searchBox.click();
                 Thread.sleep(1000);
                 searchBox.clear();
