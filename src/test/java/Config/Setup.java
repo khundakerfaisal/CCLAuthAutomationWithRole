@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class Setup {
     public WebDriver driver;
-    @BeforeTest
+    @BeforeTest(groups = "smoke")
     public void startBrowser(){
         driver=new ChromeDriver();
         driver.get("http://192.168.3.226:9090/web/login");

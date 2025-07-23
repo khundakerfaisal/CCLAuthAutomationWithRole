@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jul 23 17:35:24 BDT 2025","Wed Jul 23 17:36:33 BDT 2025","68823","User Creation","User Login","TestRunner.userTestRunner","TestRunner.userTestRunner","doChangeAuthorizedRole","User Authentication With Authorized role",""
+"passed","Wed Jul 23 17:35:16 BDT 2025","Wed Jul 23 17:35:24 BDT 2025","8356","User Creation","User Login","TestRunner.userTestRunner","TestRunner.userTestRunner","doLoginWithValidCred","Auth user login successfully",""

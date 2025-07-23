@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 import org.testng.internal.thread.ThreadExecutionException;
 
 public class LoginTestRunner extends Setup {
-    @Test(priority = 1,description = "Auth user login successfully")
-    public void doLoginWithValidCreds() throws InterruptedException {
+    @Test(priority = 1,description = "Auth user login successfully",enabled = false)
+    public void doLoginWithValidCred() throws InterruptedException {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.doLoginCCLApps("Admin","1234");
         Thread.sleep(2000);

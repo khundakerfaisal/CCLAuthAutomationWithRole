@@ -15,12 +15,12 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement submitButton;
 
-
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+
     }
 
-    public void doLoginCCLApps(String username, String password) throws InterruptedException {
+    public void doLoginCCLApps(String username,String password) throws InterruptedException {
         txtInputLogin.sendKeys(username);
         Thread.sleep(500);
         txtInputPassword.sendKeys(password);
