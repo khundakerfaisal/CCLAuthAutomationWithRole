@@ -18,6 +18,10 @@ dependencies {
     testImplementation("org.testng:testng:7.11.0")
     // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
     implementation("io.qameta.allure:allure-testng:2.29.1")
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    implementation("com.aventstack:extentreports:5.1.2")
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation("commons-io:commons-io:2.20.0")
 
 }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="User Creation">
-    <test name="User Login">
-        <groups>
-            <run>
-                <include name="smoke"></include>
-            </run>
-        </groups>
+<suite name="Login Suite">
+    <test name="User Login Page">
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="smoke"></include>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
-            <class name="TestRunner.userTestRunner"></class>
+            <class name="TestRunner.LoginTestRunner"></class>
         </classes>
     </test>
 </suite>
