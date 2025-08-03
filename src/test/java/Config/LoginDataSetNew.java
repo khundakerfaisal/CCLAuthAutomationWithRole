@@ -3,6 +3,7 @@ package Config;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.testng.annotations.DataProvider;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,17 +11,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewLoginDataSet {
-    public Object[][] getScvData() throws IOException {
+public class LoginDataSetNew {
+    @DataProvider(name = "loginCsvData")
+    public Object[][] getCsvData() throws IOException {
         String filePath="src/test/resources/login.csv";
-        List<Object> data=new ArrayList<>();
+        List<Object> dataObj=new ArrayList<>();
         CSVParser csvParser=new CSVParser(new FileReader(filePath), CSVFormat.DEFAULT.withFirstRecordAsHeader());
-        for (CSVRecord csvRecord: csvParser){
+        for (CSVRecord csvRecord:csvParser){
             String username=csvRecord.get("username");
             String password=csvRecord.get("password");
-            data.add(new Object[]{username,password});
-        }
-        return data.toArray(new Object[0][]);
+            dataObj.add(new Object[]{username,password});
 
+        }
+        return dataObj.toArray(new Object[0][]);
     }
 }
