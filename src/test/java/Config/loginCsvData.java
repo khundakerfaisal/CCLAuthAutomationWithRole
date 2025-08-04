@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginDataSetNew {
+public class loginCsvData {
     @DataProvider(name = "loginCsvData")
     public Object[][] getCsvData() throws IOException {
         String filePath="src/test/resources/login.csv";
@@ -21,7 +21,6 @@ public class LoginDataSetNew {
             String username=csvRecord.get("username");
             String password=csvRecord.get("password");
             dataObj.add(new Object[]{username,password});
-
         }
         return dataObj.toArray(new Object[0][]);
     }
