@@ -27,7 +27,6 @@ public class regionTestRunner extends Setup {
     @Test(priority = 2,description = "Region create successfully")
     public void cclRegionCreate() throws InterruptedException {
         RegionPage regionPage=new RegionPage(driver);
-        regionPage.createRegion();
-        Thread.sleep(1000);
+        regionPage.createRegion(4,6);
     }
 }
